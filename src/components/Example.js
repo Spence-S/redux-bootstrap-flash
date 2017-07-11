@@ -13,22 +13,26 @@ class Example extends Component{
     super(props);
   }
 
-  renderFlash = () => (
-    <div>
-      <Flash
-        hideFlash={() => this.props.hideFlash()}
-        show={ this.props.showFlash()}
-        message={ this.props.message }
-        status={ this.props.status }
-      />
-    </div>
-  )
+  renderFlash = () => {
+    // check if there is a message to show
+    if(this.props.show){
+      //show message
+      return(
+        <Flash
+          offClick={() => this.props.hideFlash()}
+          show={ this.props.showFlash }
+          message={ this.props.message }
+          style={ this.props.status }
+        />
+      )
+    }
+  }
 
   render(){
     return(
       <div>
         { this.renderFlash() }
-        <button onClick={ () => this.props.showFlash('hello', 'Danger') }>Show Flash</button>
+        <button onClick={ () => this.props.showFlash('hello', 'danger') }>Show Flash</button>
         <button onClick={ () => this.props.hideFlash() }>Hide Flash</button>
       </div>
     );

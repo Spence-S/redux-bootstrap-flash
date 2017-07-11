@@ -10,7 +10,7 @@ export const hideFlash = () => (
 export const showFlash = (message, status) => (
   {
     type: SHOW_FLASH,
-    message: message,
-    status: status
+    message,
+    status
   }
 )

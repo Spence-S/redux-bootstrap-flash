@@ -1,12 +1,7 @@
 import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-export default class Flash extends Component{
-  constructor(props){
-    super(props);
-  }
-
+class Flash extends Component{
   componentDidMount = () => {
     //provides event listener for outside component click
     document.addEventListener('click', this.handleOutsideClick, false);
@@ -19,25 +14,25 @@ export default class Flash extends Component{
 
   handleOutsideClick = (e) => {
     if(!ReactDOM.findDOMNode(this).contains(e.target)){
-      this.props.hideFlash();
+      this.props.offClick();
     }
   }
 
   render(){
-    let style = `panel panel-${this.props.status}`;
+    let style = `panel panel-${this.props.style}`;
     return(
-      <div>
-        <div className={!this.props.show ? 'hidden' : ''}>
-          <div className={style}>
-            <div className="panel-heading">
-              <h3 className='panel-title'>{this.props.status.toUpperCase()}</h3>
-            </div>
-            <div className='panel-body'>
-              {this.props.message}
-            </div>
+      <div className={!this.props.show ? 'hidden' : ''}>
+        <div className={style}>
+          <div className="panel-heading">
+            <h3 className='panel-title'>{this.props.style.toUpperCase()}</h3>
+          </div>
+          <div className='panel-body'>
+            {this.props.message}
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default Flash;
