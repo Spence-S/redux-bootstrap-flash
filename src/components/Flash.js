@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class Flash extends Component{
   componentDidMount = () => {
@@ -33,6 +34,13 @@ class Flash extends Component{
       </div>
     );
   }
+}
+
+Flash.propTypes = {
+  offClick: PropTypes.func,
+  show: PropTypes.bool,
+  message: PropTypes.string,
+  style: PropTypes.string,
 }
 
 export default Flash;

@@ -12,4 +12,11 @@ npm install redux-bootstrap-flash-messages
 
 ## Setting It Up
 
-In your root reducer 
+When you create your store:
+
+``` javascript
+import flashState from 'redux-bootstrap-flash-messages';
+const store = createStore(flashState);
+```
+
+In your React 
