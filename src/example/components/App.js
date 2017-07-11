@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
-import * as actions from '../actions';
-
-
-import Flash from './Flash';
+import Flash,{ showFlash, hideFlash } from '../../Flash/';
 
 class Example extends Component{
   constructor(props) {
@@ -14,7 +11,7 @@ class Example extends Component{
   }
 
   renderFlash = () => {
-    // check if there is a message to show
+    // check if there is a message to show on every props or state change
     if(this.props.show){
       //show message
       return(
@@ -44,7 +41,7 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators({ ...actions }, dispatch);
+  return bindActionCreators({ showFlash, hideFlash }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Example);

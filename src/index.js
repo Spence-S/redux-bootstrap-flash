@@ -1,23 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import logger from 'redux-logger';
-import rootReducer from './reducers/rootReducer';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import Example from './components/Example';
-import registerServiceWorker from './registerServiceWorker';
-
-let store = createStore(rootReducer,
-applyMiddleware(logger)
-);
-console.log(store.getState());
+import Main from './example'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Example />
-  </Provider>,
+  <Main />,
   document.getElementById('root')
 );
-
-registerServiceWorker();
