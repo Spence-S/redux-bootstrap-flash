@@ -10,7 +10,7 @@ class Example extends Component{
     super();
     this.state = {
       message: '',
-      flashType: 'danger'
+      flashType: ''
     }
   }
 
@@ -45,6 +45,8 @@ class Example extends Component{
             className='form-control'
             value={this.state.flashType}
             onChange={(e) => this.setState({flashType: e.target.value})}>
+            <option value=''>null</option>
+            <option value='default'>default</option>
             <option value="danger">danger</option>
             <option value="primary">primary</option>
             <option value="info">info</option>
