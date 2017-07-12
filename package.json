@@ -1,15 +1,21 @@
 {
   "name": "redux-bootstrap-flash",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "description": "Easy flash messaging in your bootstrap styled React/Redux apps!",
+  "author": {
+    "name": "Spencer Snyder",
+    "email": "sasnyde2@gmail.com"
+    },
   "dependencies": {
     "bootstrap": "3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
-    "react-scripts": "1.0.10",
     "redux": "^3.7.1",
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.10",
     "redux-logger": "^3.0.6"
   },
   "scripts": {
@@ -17,5 +23,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "main": "index.js",
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/spence-s/redux-bootstrap-flash"
+  },
+  "bugs": {
+    "url": "https://github.com/spence-s/redux-bootstrap-flash/issues"
+  },
+  "keywords": [
+    "Redux",
+    "React",
+    "Flash",
+    "Warnings",
+    "Messages",
+    "Flash Messages",
+    "bootstrap"
+  ],
+  "homepage": "https://github.com/spence-s/redux-bootstrap-flash",
+  "license": "MIT"
 }
