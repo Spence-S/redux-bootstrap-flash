@@ -2,7 +2,7 @@
 import { SHOW_FLASH, HIDE_FLASH } from './Flash_actions';
 
 const initialState = {
-  show: true,
+  show: false,
   message: '',
   status: ''
 }
