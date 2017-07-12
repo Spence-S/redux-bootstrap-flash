@@ -7,12 +7,12 @@ Just dispatch the flash action and the next user click, the flash message will d
 It's as simple as that!
 
 ---
-Checkout the demo! --> [redux-bootstrap-flash]()
+Checkout the demo! --> [redux-bootstrap-flash](http://feigned-stream.surge.sh/)
 ---
 
 ### Behavior
 
-When you dispatch a showFlash method at any point in your application life cycle,
+When you dispatch a showFlash method at any point in your application life cycle, the flash message will pop up wherever you have placed the component and disappear on the next user click!
 
 
 ## Install
@@ -80,4 +80,6 @@ const action = () => (dispatch) => {
 }
 ```
 
-## Details
+## TODOS
+
+-[ ] More ability to customize styles and behavior coming soon.
