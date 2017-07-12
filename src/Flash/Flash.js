@@ -23,15 +23,14 @@ class Flash extends Component{
   }
 
   renderFlash = () => {
-    if(this.props.show) return(
-      //<div className={!this.props.show ? '' : 'hidden'}>
+    if(this.props.flashState.show) return(
       <div>
-        <div className={`panel panel-${this.props.status.toLowerCase()}`}>
+        <div className={`panel panel-${this.props.flashState.status.toLowerCase()}`}>
           <div className="panel-heading">
-            <h3 className='panel-title'>{this.props.status ? this.props.status.toUpperCase() : ''}</h3>
+            <h3 className='panel-title'>{this.props.flashState.status ? this.props.flashState.status.toUpperCase() : ''}</h3>
           </div>
           <div className='panel-body'>
-            {this.props.message}
+            {this.props.flashState.message}
           </div>
         </div>
       </div>

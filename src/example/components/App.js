@@ -6,18 +6,22 @@ import { bindActionCreators } from 'redux';
 import Flash,{ showFlash, hideFlash } from '../../Flash/';
 
 class Example extends Component{
-constructor(){
-  super();
-  this.state = {
-    message: '',
-    flashType: 'danger'
+  constructor(){
+    super();
+    this.state = {
+      message: '',
+      flashType: 'danger'
+    }
   }
-}
+
+  componentDidMount = () => {
+    console.log(this.props)
+  }
 
   renderFlash = () => {
     // check if there is a message to show on every props or state change
     // this is nescesarry due to the way the component detects screen clicks
-    if(this.props.show){
+    if(this.props.flashState.show){
       //show message
       return(
         <Flash />
@@ -28,21 +32,19 @@ constructor(){
   render(){
     return(
       <div className='container'>
-        <div className='row'>
-          <div className='col-xs-12'>
-            { this.renderFlash() }
-            <button onClick={ () => this.props.showFlash(this.state.message, this.state.flashType) }>Show Flash</button>
-            <button onClick={ () => this.props.hideFlash() }>Hide Flash</button>
-        <div class="row">
+        <div className="form-group">
           <label>Flash Message Text:</label>
           <input
+            className='form-control'
             onChange={ (e)=>this.setState({message: e.target.value}) }
             value={this.state.message}
           />
-        </div>
-        <div class="row">
+
           <label>Select Style:</label>
-          <select value={this.state.flashType} onChange={(e) => this.setState({flashType: e.target.value})}>
+          <select
+            className='form-control'
+            value={this.state.flashType}
+            onChange={(e) => this.setState({flashType: e.target.value})}>
             <option value="danger">danger</option>
             <option value="primary">primary</option>
             <option value="info">info</option>
@@ -50,9 +52,16 @@ constructor(){
             <option value="warning">warning</option>
           </select>
         </div>
-          </div>
+        <button
+          className='btn btn-inverted'
+          onClick={ () => this.props.showFlash(this.state.message, this.state.flashType) }>
+          Show Flash
+        </button>
+        <div style={{marginTop: '20px'}}>
+          { this.renderFlash() }
         </div>
       </div>
+
     );
   }
 }

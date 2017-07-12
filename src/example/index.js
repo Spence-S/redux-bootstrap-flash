@@ -1,7 +1,7 @@
 // App deps
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 
 // modules
 import logger from 'redux-logger';
@@ -14,9 +14,9 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from './components/App';
 
 
+const rootReducer = combineReducers({flashState});
 
-
-let store = createStore(flashState,
+let store = createStore(rootReducer,
 applyMiddleware(logger)
 );
 
