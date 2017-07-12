@@ -4,7 +4,7 @@ import Flash, {
   showFlash,
   SHOW_FLASH,
   HIDE_FLASH
-} from ./src/Flash/;
+} from './src/Flash/';
 
 export {
   HIDE_FLASH,
