@@ -1,6 +1,8 @@
 # redux-bootstrap-flash
 
-> MVP approved bootstrap styled flash messages.
+[![Build Status](https://travis-ci.org/Spence-S/redux-bootstrap-flash.svg?branch=master)](https://travis-ci.org/Spence-S/redux-bootstrap-flash)
+
+> MVP approved bootstrap styled flsash messages.
 
 redux-bootstrap-flash is a small react-redux component that allows you to
 quickly implement a flash messaging system in your bootstrap@3 styled applications. It's tiny and dead simple to use and has minimal configuration.
