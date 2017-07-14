@@ -20,6 +20,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.5.1",
@@ -68,7 +69,9 @@
     "test": "node scripts/test.js --env=jsdom",
     "build:commonjs": "cross-env NODE_ENV=production babel ./src/Flash --out-dir ./lib"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "respository": {
     "type": "git",
     "url": "https://github.com/spence-s/redux-bootstrap-flash"
@@ -122,7 +125,8 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
+    ],
+    "plugins": ["transform-es2015-modules-commonjs"]
   },
   "eslintConfig": {
     "extends": "react-app"
