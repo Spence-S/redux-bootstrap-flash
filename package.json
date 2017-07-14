@@ -1,6 +1,6 @@
 {
   "name": "redux-bootstrap-flash",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easy flash messaging in your bootstrap styled React/Redux apps!",
   "main": "./lib/index.js",
   "author": {
